@@ -1,11 +1,8 @@
 #include <iostream>
-#include "Vec2.h"
+#include "Game.h"
 
 int main() {
-
-    Vec2 a(500,200);
-    Vec2 b(100,50);
-    a += b;
-    std::cout <<  a.x << std::endl;
+    Game game;
+    game.run();
     return 0;
 }

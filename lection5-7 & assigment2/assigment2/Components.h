@@ -58,6 +58,7 @@ public:
 
 class CInput
 {
+public:
     bool upKey = false;
     bool downKey = false;
     bool rightKey = false;

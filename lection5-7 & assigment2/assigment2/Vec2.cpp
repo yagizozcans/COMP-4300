@@ -1,4 +1,5 @@
 #include "Vec2.h"
+#include <math.h>
 
 Vec2::Vec2() {}
 
@@ -65,4 +66,8 @@ bool Vec2::operator==(const Vec2 &rightSide) const
 bool Vec2::operator!=(const Vec2 &rightSide) const
 {
     return (x != rightSide.x || y != rightSide.y);
+}
+
+const Vec2 Vec2::normalize() const {
+    return Vec2(x/sqrt(x*x + y*y),y/sqrt(x*x + y*y));
 }

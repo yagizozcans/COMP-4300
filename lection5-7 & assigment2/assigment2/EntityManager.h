@@ -16,7 +16,7 @@ class EntityManager {
     EntityMap em_entityMap;
     size_t em_totalEntities = 0;
 public:
-    EntityManager();
+    EntityManager()= default;
     std::shared_ptr<Entity> addEntity(const std::string& tag);
     EntityVec& getEntities();
     EntityVec& getEntities(const std::string& tag);

@@ -16,6 +16,9 @@ public:
     std::shared_ptr<CScore> cScore;
     std::shared_ptr<CLifespan> cLifespan;
     const std::string tag() const;
-    const bool isActive() const;
+    bool isActive() const;
+    const void destroy();
     Entity(const std::string& tag, size_t id);
+
+    const void set_tag(const std::string &tag);
 };
