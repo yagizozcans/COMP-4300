@@ -24,5 +24,5 @@ public:
     Vec2 operator *= (const float & rightSide);
     Vec2 operator /= (const float & rightSide);
 
-    const Vec2 normalize() const;
+    Vec2 normalize() const;
 };

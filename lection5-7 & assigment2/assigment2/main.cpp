@@ -3,6 +3,6 @@
 
 int main() {
     Game game;
-    game.run();
+    game.run("config.txt");
     return 0;
 }

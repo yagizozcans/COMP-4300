@@ -53,7 +53,7 @@ public:
     float remaining = 0;
     float total = 0;
     CLifespan(float total)
-    : remaining(total),total(total) {}
+    : total(total),remaining(total) {}
 };
 
 class CInput

@@ -68,6 +68,6 @@ bool Vec2::operator!=(const Vec2 &rightSide) const
     return (x != rightSide.x || y != rightSide.y);
 }
 
-const Vec2 Vec2::normalize() const {
-    return Vec2(x/sqrt(x*x + y*y),y/sqrt(x*x + y*y));
+Vec2 Vec2::normalize() const {
+    return *this/ sqrt(x*x+y*y);
 }

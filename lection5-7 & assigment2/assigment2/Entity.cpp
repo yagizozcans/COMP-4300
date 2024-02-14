@@ -14,10 +14,10 @@ bool Entity::isActive() const {
 Entity::Entity(const std::string &tag, size_t id) {
 }
 
-const void Entity::set_tag(const std::string& tag) {
+void Entity::set_tag(const std::string& tag) {
     e_tag = tag;
 }
 
-const void Entity::destroy() {
+void Entity::destroy() {
     e_isActive = false;
 }

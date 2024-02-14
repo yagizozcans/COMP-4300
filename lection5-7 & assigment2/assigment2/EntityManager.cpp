@@ -3,19 +3,25 @@
 //
 
 #include "EntityManager.h"
-
+#include <map>
 void EntityManager::update() {
+    for(const auto& e : em_entities)
+    {
+        if(e != nullptr)
+        {
+            if(!(e -> isActive()))
+            {
+                auto it = std::find(em_entities.begin(),em_entities.end(),e);
+                auto itMap = std::find(em_entityMap[e->tag()].begin(),em_entityMap[e->tag()].end(),e);
+                em_entityMap[e->tag()].erase(itMap);
+                em_entities.erase(it);
+            }
+        }
+    }
     for(const auto& e : em_toAddEntities)
     {
         em_entities.push_back(e);
         em_entityMap[e->tag()].push_back(e);
-    }
-    for(const auto& e : em_entities)
-    {
-        if(!(e -> isActive()))
-        {
-            em_entities.erase(std::remove(em_entities.begin(),em_entities.end(),e),em_entities.end());
-        }
     }
     em_toAddEntities.clear();
 }
@@ -34,3 +40,5 @@ std::shared_ptr<Entity> EntityManager::addEntity(const std::string &tag) {
     em_toAddEntities.push_back(e);
     return e;
 }
+
+
