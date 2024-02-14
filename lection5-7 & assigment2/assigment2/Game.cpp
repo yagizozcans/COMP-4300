@@ -246,7 +246,7 @@ void Game::sCollision() {
 
 void Game::sEnemySpawner() {
     elapsedTime = s_clock.getElapsedTime().asSeconds();
-    if(elapsedTime >= enemyCreationTime)
+    if(elapsedTime >= g_enemyConfig.SP)
     {
         SpawnEnemy(Vec2(g_enemyConfig.SMIN+((float)rand()) / RAND_MAX * (g_enemyConfig.SMAX-g_enemyConfig.SMIN),
                         g_enemyConfig.SMIN+((float)rand()) / RAND_MAX * ((g_enemyConfig.SMAX-g_enemyConfig.SMIN))),

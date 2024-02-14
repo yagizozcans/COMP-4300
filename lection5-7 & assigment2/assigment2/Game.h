@@ -16,7 +16,6 @@ class Game {
 
     sf::Clock s_clock;
     float elapsedTime = 0.0f;
-    float enemyCreationTime = 1.0f;
 
     sf::Clock deltaClock;
     sf::Time deltaTime;
